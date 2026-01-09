@@ -1,0 +1,353 @@
+.technology {
+  background: var(--surface-base);
+}
+
+.technology .about-card-title {
+  max-width: 34ch;
+}
+
+.technology-kicker {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.technology-focus-spotlight {
+  margin-top: clamp(1.6rem, 3vw, 2.6rem);
+  padding: clamp(2.6rem, 5vw, 3.3rem);
+  border-radius: 32px;
+  background: linear-gradient(135deg, var(--gradient-strong-start) 0%, var(--gradient-strong-mid) 55%, var(--gradient-strong-end) 100%);
+  border: 1px solid var(--border-glow-strong);
+  box-shadow: 0 44px 90px var(--shadow-strong);
+  display: grid;
+  gap: clamp(1.8rem, 3.2vw, 2.3rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.technology-focus-spotlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, var(--radial-highlight) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.technology-focus-header {
+  display: grid;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.technology-focus-badge {
+  width: fit-content;
+  padding: 0.38rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.technology-focus-header h3 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  color: #f6f9ff;
+}
+
+.technology-focus-header p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 62ch;
+}
+
+.technology-focus-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(1.6rem, 3vw, 2.4rem);
+  position: relative;
+  z-index: 1;
+  align-items: stretch;
+}
+
+.technology-focus-cards {
+  display: grid;
+  gap: clamp(1.1rem, 2.4vw, 1.45rem);
+}
+
+.technology-focus-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1.25rem 1.4rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 26px 60px rgba(3, 9, 32, 0.42);
+}
+
+.technology-focus-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: rgba(88, 224, 255, 0.28);
+  color: #f9fbff;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+}
+
+.technology-focus-copy h4 {
+  margin: 0 0 0.4rem;
+  font-size: 1.08rem;
+  color: #f7f9ff;
+}
+
+.technology-focus-copy p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.technology-focus-diagram {
+  display: flex;
+  align-items: stretch;
+}
+
+.technology-diagram-shell {
+  flex: 1 1 auto;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(4, 16, 36, 0.35);
+  padding: clamp(1.6rem, 3vw, 2.2rem);
+  display: grid;
+  gap: 1.1rem;
+  align-content: flex-start;
+}
+
+.diagram-label {
+  display: inline-flex;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(88, 224, 255, 0.24);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.diagram-figure {
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.diagram-image {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 22px 44px rgba(3, 9, 32, 0.48);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.diagram-caption {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.76);
+  max-width: 40ch;
+}
+
+.technology-metrics .snapshot-chip {
+  grid-template-columns: 1fr;
+}
+
+.technology-blueprint-grid {
+  grid-template-columns: 1fr;
+  gap: clamp(1.4rem, 2.8vw, 1.9rem);
+}
+
+.technology .about-bottom-grid {
+  grid-template-columns: 1fr;
+  gap: clamp(2.2rem, 4vw, 3rem);
+}
+
+
+.technology-blueprint-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2.2vw, 1.4rem);
+  padding: clamp(1.9rem, 3vw, 2.4rem);
+}
+
+.technology-blueprint-card .pillar-heading {
+  font-size: 1.1rem;
+}
+
+.technology-blueprint-list {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.technology-proof .market-card {
+  min-height: 220px;
+}
+
+.technology-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1.2rem, 2.4vw, 1.7rem);
+}
+
+.technology-panel {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  padding: 1.9rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 52px rgba(3, 9, 32, 0.38);
+  display: grid;
+  gap: 1rem;
+}
+
+.technology-panel-kicker {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.68);
+  font-weight: 700;
+}
+
+.technology-panel-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f8f9ff;
+}
+
+.technology-panel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.95rem;
+}
+
+.technology-panel-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.05rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: grid;
+  gap: 0.45rem;
+}
+
+.technology-panel-headline {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.technology-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(188, 215, 213, 0.22);
+  background: color-mix(in srgb, var(--accent) 32%, transparent);
+  color: #e6f3f2;
+  color: color-mix(in srgb, var(--accent) 80%, #ffffff 20%);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.technology-panel-highlight {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f7f9ff;
+}
+
+.technology-panel-detail {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.technology-footnote {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-top: 1.8rem;
+  padding: 1.25rem 1.4rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.technology-footnote p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+.tech-check {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (max-width: 880px) {
+  .technology-blueprint-card {
+    grid-template-columns: 1fr;
+  }
+
+  .technology-focus-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .technology .about-card {
+    padding: 2.2rem 2.3rem;
+  }
+
+  .technology-blueprint-card {
+    padding: 1.9rem 2rem;
+  }
+
+  .technology-footnote {
+    flex-direction: column;
+  }
+
+  .technology-focus-spotlight {
+    padding: 2.3rem 2.4rem;
+  }
+
+  .technology-diagram-shell {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .technology-panel {
+    padding: 1.7rem 1.8rem;
+  }
+}

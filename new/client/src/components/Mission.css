@@ -1,0 +1,42 @@
+.mission {
+  background: var(--bg);
+}
+
+.mission .about-card-title {
+  max-width: 32ch;
+}
+
+.mission-kicker {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.mission-metrics .snapshot-chip {
+  grid-template-columns: 1fr;
+}
+
+.mission-tracks .about-pillars {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.mission-proof .market-card {
+  min-height: 220px;
+}
+
+@media (max-width: 880px) {
+  .mission-tracks .about-pillars {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .mission .about-card {
+    padding: 2.2rem 2.25rem;
+  }
+
+  .mission-tracks .pillar-card {
+    padding: 1.8rem 1.9rem 2.2rem;
+  }
+}

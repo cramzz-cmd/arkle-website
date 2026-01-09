@@ -1,0 +1,136 @@
+.page-hero {
+  padding: calc(var(--spacing-xl) + 1rem) 0 var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--page-hero-mid) 55%, var(--primary-strong) 100%);
+}
+
+.page-hero::before,
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--radial-highlight) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-hero::before {
+  width: 420px;
+  height: 420px;
+  top: -160px;
+  right: -120px;
+}
+
+.page-hero::after {
+  width: 320px;
+  height: 320px;
+  bottom: -140px;
+  left: -100px;
+}
+
+.page-hero .hero-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.page-hero .hero-title {
+  font-size: 2.8rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.page-hero .highlight {
+  color: #6fd2ff;
+}
+
+.page-hero-subtitle {
+  max-width: 60ch;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 1.5rem;
+}
+
+.page-hero-stats {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-stat {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 20px 45px var(--shadow-soft);
+  display: grid;
+  gap: 0.45rem;
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.page-hero-stat .stat-value {
+  font-size: 2.1rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-strong);
+  letter-spacing: 0.05em;
+}
+
+.page-hero-stat .stat-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding-top: calc(var(--spacing-lg) + 2rem);
+  }
+
+  .page-hero .hero-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .page-hero::before {
+    width: 280px;
+    height: 280px;
+    top: -120px;
+    right: -90px;
+  }
+
+  .page-hero::after {
+    width: 220px;
+    height: 220px;
+    bottom: -90px;
+    left: -70px;
+  }
+
+  .page-hero {
+    padding-bottom: var(--spacing-md);
+  }
+
+  .page-hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero-stat {
+    text-align: center;
+  }
+}

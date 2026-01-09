@@ -1,0 +1,29 @@
+{
+  "name": "arkle-energy",
+  "version": "1.0.0",
+  "description": "Arkle Energy - Vanadium Battery Solutions Portfolio Website",
+  "main": "server/index.js",
+  "scripts": {
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix client",
+    "start": "cd server && npm start",
+    "install-all": "npm install",
+    "postinstall": "npm install --prefix client && npm install --prefix server",
+    "ngrok:client": "ngrok http --host-header=localhost:3000 3000",
+    "tunnel": "concurrently -k \"npm run server\" \"npm run client\" \"npm run ngrok:client\""
+  },
+  "keywords": [
+    "energy",
+    "battery",
+    "vanadium",
+    "portfolio"
+  ],
+  "author": "Arkle Energy",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "ngrok": "^5.0.0-beta.2"
+  }
+}

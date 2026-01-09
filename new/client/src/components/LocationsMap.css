@@ -1,0 +1,279 @@
+.locations-map {
+  background: var(--bg);
+}
+
+.locations-overview .about-card-title {
+  max-width: 32ch;
+}
+
+.locations-focus .capability-card {
+  box-shadow: 0 18px 42px rgba(3, 9, 32, 0.32);
+}
+
+.locations-kicker {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.locations-metrics .snapshot-chip {
+  grid-template-columns: 1fr;
+}
+
+.locations-interactive {
+  gap: 2rem;
+}
+
+.locations-interactive-shell {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.locations-map-card {
+  background: rgba(5, 16, 41, 0.65);
+  border-radius: 24px;
+  padding: 2.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 22px 48px rgba(6, 11, 32, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.india-map-svg {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.india-state {
+  fill: rgba(255, 255, 255, 0.12);
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 1.2;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.india-state.has-projects {
+  fill: rgba(125, 177, 173, 0.24);
+  fill: color-mix(in srgb, var(--accent) 32%, transparent);
+  cursor: pointer;
+}
+
+.india-state.has-projects:hover,
+.india-state.hovered {
+  fill: #cfe5e4;
+  fill: color-mix(in srgb, var(--accent) 75%, #ffffff 25%);
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 2.4;
+  filter: drop-shadow(0 10px 18px rgba(125, 177, 173, 0.4));
+}
+
+.india-state.selected {
+  fill: #dbeeee;
+  fill: color-mix(in srgb, var(--accent) 85%, #ffffff 15%);
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 2.8;
+}
+
+.state-tooltip {
+  position: absolute;
+  bottom: 1.6rem;
+  right: 1.6rem;
+  min-width: 240px;
+  background: rgba(5, 16, 41, 0.9);
+  padding: 1.2rem 1.4rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 36px rgba(3, 9, 32, 0.5);
+}
+
+.state-tooltip h4 {
+  margin: 0 0 0.85rem;
+  color: #f8f9ff;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.tooltip-stats {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.tooltip-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tooltip-stat .stat-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tooltip-stat .stat-value {
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 700;
+}
+
+.locations-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.locations-stat {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 1.25rem 1.3rem;
+  text-align: center;
+  box-shadow: 0 18px 32px rgba(3, 9, 32, 0.38);
+}
+
+.locations-stat .stat-number {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f8f9ff;
+}
+
+.locations-stat .stat-caption {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.locations-state-details {
+  background: linear-gradient(135deg, var(--gradient-strong-start) 0%, var(--gradient-strong-mid) 60%, var(--gradient-strong-end) 100%);
+  border-radius: 24px;
+  padding: 2.4rem 2.8rem;
+  box-shadow: 0 22px 48px rgba(6, 11, 40, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: grid;
+  gap: 1.4rem;
+}
+
+.locations-state-details .details-header {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.14);
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.locations-state-details .details-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #f8f9ff;
+  font-weight: 700;
+}
+
+.locations-state-details .details-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.4rem;
+}
+
+.locations-state-details .detail-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.locations-state-details .detail-icon {
+  font-size: 2.1rem;
+}
+
+.locations-state-details .detail-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 0.25rem;
+}
+
+.locations-state-details .detail-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f8f9ff;
+}
+
+.locations-state-details .detail-summary {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+.locations-insights .market-card {
+  min-height: 220px;
+}
+
+.close-btn {
+  background: rgba(125, 177, 173, 0.26);
+  background: color-mix(in srgb, var(--accent) 36%, transparent);
+  color: var(--text-inverse);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg) scale(1.05);
+}
+
+@media (max-width: 960px) {
+  .locations-interactive-shell {
+    margin-bottom: 1.5rem;
+  }
+
+  .locations-state-details {
+    padding: 2rem 2.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .locations-map-card {
+    padding: 2rem;
+  }
+
+  .state-tooltip {
+    position: static;
+    margin-top: 1.2rem;
+  }
+
+  .locations-state-details {
+    padding: 1.9rem;
+  }
+
+  .locations-state-details .details-content {
+    grid-template-columns: 1fr;
+  }
+
+  .locations-stat .stat-number {
+    font-size: 1.4rem;
+  }
+}
