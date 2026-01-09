@@ -33,24 +33,22 @@ router.post('/', async (req, res) => {
     console.log('Interest:', interest || 'Not specified');
     console.log('Message:', message);
 
-    /* 
-    // Uncomment this section to enable email sending
-    // Configure nodemailer transporter
+    // Configure nodemailer transporter using SMTP credentials from environment variables
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
-      secure: false,
+      port: Number(process.env.EMAIL_PORT) || 587,
+      secure: Number(process.env.EMAIL_PORT) === 465,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
 
-    // Email content
+    // Email content dispatched to the recipient mailbox
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'abhinavpolimera@gmail.com',
-      subject: `New Contact Form Submission from ${name}`,
+      to: process.env.EMAIL_TO || 'abhinavpolimera@gmail.com',
+      subject: New Contact Form Submission from ${name},
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
@@ -62,9 +60,8 @@ router.post('/', async (req, res) => {
       `,
     };
 
-    // Send email
+    // Send email via the configured SMTP transport
     await transporter.sendMail(mailOptions);
-    */
 
     res.status(200).json({ 
       success: true, 
