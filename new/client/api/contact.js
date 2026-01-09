@@ -1,0 +1,106 @@
+import nodemailer from 'nodemailer';
+
+const readRequestBody = async (req) => {
+  if (req.body) {
+    return typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+  }
+
+  const chunks = [];
+  for await (const chunk of req) {
+    chunks.push(chunk);
+  }
+
+  const buffer = Buffer.concat(chunks).toString();
+  return buffer ? JSON.parse(buffer) : {};
+};
+
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', 'POST');
+    return res.status(405).json({
+      success: false,
+      message: 'Method not allowed',
+    });
+  }
+
+  try {
+    const { name, email, company, interest, message } = await readRequestBody(req);
+
+    if (!name || !email || !message) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide name, email, and message',
+      });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide a valid email address',
+      });
+    }
+
+    const requiredEnv = ['EMAIL_USER', 'EMAIL_PASS'];
+    const missingEnv = requiredEnv.filter((key) => !process.env[key]);
+    if (missingEnv.length) {
+      console.error('Missing email environment variables:', missingEnv.join(', '));
+      return res.status(500).json({
+        success: false,
+        message: 'Email service is not configured. Please try again later.',
+      });
+    }
+
+    const smtpHost = process.env.EMAIL_HOST || '';
+    const smtpPort = Number(process.env.EMAIL_PORT) || 587;
+    const useGmailPreset = smtpHost.includes('gmail.com');
+
+    const transporter = nodemailer.createTransport(
+      useGmailPreset
+        ? {
+            service: 'gmail',
+            auth: {
+              user: process.env.EMAIL_USER,
+              pass: process.env.EMAIL_PASS,
+            },
+          }
+        : {
+            host: smtpHost,
+            port: smtpPort,
+            secure: smtpPort === 465,
+            auth: {
+              user: process.env.EMAIL_USER,
+              pass: process.env.EMAIL_PASS,
+            },
+          }
+    );
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_TO || 'abhinavpolimera@gmail.com',
+      subject: New Contact Form Submission from ${name},
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Company:</strong> ${company || 'Not provided'}</p>
+        <p><strong>Area of Interest:</strong> ${interest || 'Not specified'}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    return res.status(200).json({
+      success: true,
+      message: 'Thank you for your message! We will get back to you soon.',
+    });
+  } catch (error) {
+    console.error('Error handling contact form:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'An error occurred while processing your request. Please try again later.',
+    });
+  }
+}
