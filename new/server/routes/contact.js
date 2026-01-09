@@ -33,16 +33,40 @@ router.post('/', async (req, res) => {
     console.log('Interest:', interest || 'Not specified');
     console.log('Message:', message);
 
+    const requiredEnv = ['EMAIL_USER', 'EMAIL_PASS'];
+    const missingEnv = requiredEnv.filter((key) => !process.env[key]);
+    if (missingEnv.length) {
+      console.error('Missing email environment variables:', missingEnv.join(', '));
+      return res.status(500).json({
+        success: false,
+        message: 'Email service is not configured. Please try again later.'
+      });
+    }
+
+    const smtpHost = process.env.EMAIL_HOST || '';
+    const smtpPort = Number(process.env.EMAIL_PORT) || 587;
+    const useGmailPreset = smtpHost.includes('gmail.com');
+
     // Configure nodemailer transporter using SMTP credentials from environment variables
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: Number(process.env.EMAIL_PORT) || 587,
-      secure: Number(process.env.EMAIL_PORT) === 465,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    const transporter = nodemailer.createTransport(
+      useGmailPreset
+        ? {
+            service: 'gmail',
+            auth: {
+              user: process.env.EMAIL_USER,
+              pass: process.env.EMAIL_PASS,
+            },
+          }
+        : {
+            host: smtpHost,
+            port: smtpPort,
+            secure: smtpPort === 465,
+            auth: {
+              user: process.env.EMAIL_USER,
+              pass: process.env.EMAIL_PASS,
+            },
+          }
+    );
 
     // Email content dispatched to the recipient mailbox
     const mailOptions = {
