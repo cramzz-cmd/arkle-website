@@ -125,16 +125,17 @@
 }
 
 .metric-label {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-family: var(--font-heading);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--gray);
+  color: var(--text-strong);
+  font-weight: 600;
 }
 
 .metric-support {
-  font-size: 0.8rem;
-  color: var(--gray);
+  font-size: 0.85rem;
+  color: var(--text-primary);
 }
 
 /* Responsive */

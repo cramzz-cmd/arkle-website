@@ -16,14 +16,14 @@ const Contact = () => {
   const contactDetails = [
     {
       icon: '🏭',
-      title: 'Bengaluru Operations Hub',
-      description: 'HSR Layout, Bengaluru, Karnataka 560102, India',
+      title: 'Hyderabad Operations Hub',
+      description: 'Arkle Energy Solutions Private Limited, Plot No. 07-901/33/8 & 3, Medchal-Malkajgiri, Fox Sagar Road, IDA Jeedimetla, Hyderabad, Medchal-Malkajgiri Dist, Telangana',
       meta: 'Manufacturing, lab, and command centre'
     },
     {
       icon: '✉️',
       title: 'Email',
-      description: 'info@arkleenergy.com'
+      description: 'contact@arkleenergy.com'
     }
   ];
 

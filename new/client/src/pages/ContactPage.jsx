@@ -13,7 +13,7 @@ function ContactPage() {
           </>
         )}
         description="Share your storage brief and we will tailor a vanadium flow battery program that hits uptime, safety, and circularity goals."
-        primaryCta={{ label: 'Email Our Team', href: 'mailto:abhinavpolimera@gmail.com' }}
+        primaryCta={{ label: 'Email Our Team', href: 'mailto:contact@arkleenergy.com' }}
         secondaryCta={{ label: 'View Technology Deck', to: '/technology', variant: 'primary' }}
       />
       <Contact />

@@ -6,7 +6,6 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import MissionPage from './pages/MissionPage';
 import TechnologyPage from './pages/TechnologyPage';
-import LocationsPage from './pages/LocationsPage';
 import TeamPage from './pages/TeamPage';
 import ContactPage from './pages/ContactPage';
 import ApplicationsPage from './pages/ApplicationsPage';
@@ -22,7 +21,6 @@ function App() {
           <Route path="/mission" element={<MissionPage />} />
           <Route path="/technology" element={<TechnologyPage />} />
           <Route path="/applications" element={<ApplicationsPage />} />
-          <Route path="/locations" element={<LocationsPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

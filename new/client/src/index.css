@@ -26,30 +26,30 @@
   color-scheme: light;
 
   /* Core Palette */
-  --primary: #48948e;
-  --primary-light: #7db1ad;
-  --primary-dark: #2f6d68;
-  --primary-strong: #2a5f5a;
-  --secondary: #7db1ad;
-  --secondary-dark: #2f5c5a;
-  --accent: #bcd7d5;
-  --accent-light: #e3f2f1;
-  --dark: #0d3c45;
+  --primary: #2f8a83;
+  --primary-light: #66b3ad;
+  --primary-dark: #1f5f5a;
+  --primary-strong: #174b46;
+  --secondary: #4f9d97;
+  --secondary-dark: #1e4f4d;
+  --accent: #9fc6c2;
+  --accent-light: #d6ebe9;
+  --dark: #082c33;
 
   /* Text Tokens */
-  --text-primary: #1a2f34;
-  --text-strong: #0f2429;
-  --text-muted: #4d6b70;
+  --text-primary: #0f1f23;
+  --text-strong: #08181b;
+  --text-muted: #2f474c;
   --text-inverse: #ffffff;
 
   /* Surface Tokens */
-  --surface-base: #f2f9f8;
-  --surface-muted: #e5f1f0;
+  --surface-base: #f7fcfb;
+  --surface-muted: #ddeceb;
   --surface-elevated: #ffffff;
-  --border-soft: rgba(15, 57, 63, 0.08);
-  --border-strong: rgba(15, 57, 63, 0.18);
-  --shadow-soft: rgba(15, 57, 63, 0.12);
-  --shadow-strong: rgba(13, 52, 58, 0.24);
+  --border-soft: rgba(15, 57, 63, 0.12);
+  --border-strong: rgba(15, 57, 63, 0.24);
+  --shadow-soft: rgba(12, 44, 50, 0.16);
+  --shadow-strong: rgba(9, 34, 39, 0.3);
 
   --gradient-strong-start: #0b3e4b;
   --gradient-strong-mid: #1e5f68;

@@ -14,7 +14,6 @@ function TechnologyPage() {
         )}
         description="In-house redox flow systems decouple power and energy, delivering 25+ years of safe, zero-degradation storage for critical infrastructure."
         primaryCta={{ label: 'Talk To A Specialist', to: '/contact' }}
-        secondaryCta={{ label: 'See Deployments', to: '/locations', variant: 'primary' }}
         stats={[
           { value: '25+ yr', label: 'Operational Life' },
           { value: '0%', label: 'Capacity Degradation' },

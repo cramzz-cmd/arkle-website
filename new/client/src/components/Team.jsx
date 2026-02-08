@@ -12,8 +12,8 @@ const Team = () => {
     {
       initials: 'VL',
       name: 'Varad Manoj Latkar',
-      role: 'Head of Stack Engineering',
-      bio: 'Owns electrochemical stack design, balance-of-plant integration, and benchmark testing for 4-32 hour assets.'
+      role: 'Chief Technology Officer',
+      bio: 'Leads the technology roadmap spanning stack engineering, balance-of-plant integration, and performance validation.'
     },
     {
       initials: 'AS',
@@ -24,8 +24,8 @@ const Team = () => {
     {
       initials: 'HK',
       name: 'Dr. Harun Khan',
-      role: 'Principal Scientist',
-      bio: 'Drives electrolyte chemistry innovation, durability testing, and data-backed validation of long-duration stacks.'
+      role: 'Head of Energy Storage and Battery Research',
+      bio: 'Directs electrolyte research, durability testing, and data-backed validation of long-duration storage performance.'
     },
     {
       initials: 'ET',
